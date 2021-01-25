@@ -1,0 +1,6 @@
+open_jtalk -m /usr/share/hts-voice/nitech-jp-atr503-m001/nitech_jp_atr503_m001.htsvoice \
+> -x /var/lib/mecab/dic/open-jtalk/naist-jdic \
+> -ow answer.wav \
+> voice_sample.txt
+
+sudo apt-get install -y open-jtalk libhtsengine1 open-jtalk-mecab-naist-jdic hts-voice-nitech-jp-atr503-m001 libhtsengine1

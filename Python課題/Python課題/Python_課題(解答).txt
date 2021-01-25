@@ -1,0 +1,325 @@
+﻿Python　課題(解答)
+
+
+練習01 計算する
+
+a = 5
+b = 2
+wa = a + b
+sa = a - b
+seki = a * b
+sho1 = a // b
+amari = a % b
+sho2 = a / b
+print(a,'＋',b,'=',wa,sep=' ')
+print(a,'−',b,'=',sa,sep=' ')
+print(a,'×',b,'=',seki,sep=' ')
+print(a,'÷',b,'=',sho1,'余り',amari,sep=' ')
+print(a,'÷',b,'=',sho2,sep=' ')
+
+
+
+練習02 データ入力
+
+eigo = int(input('英語の成績を入力して下さい> '))
+sugaku = int(input('数学の成績を入力して下さい> '))
+gokei = eigo + sugaku
+heikin = gokei / 2
+print('英語の得点:',eigo,sep=' ')
+print('数学の得点:',sugaku,sep=' ')
+print('合　　　計:',gokei,sep=' ')
+print('平　　　均:',heikin,sep=' ')
+
+
+
+練習03 BMI(Body Mass Index)
+
+height = float(input('身長をm単位で入力して下さい> '))
+weight = float(input('体重をkg単位で入力して下さい> '))
+bmi = weight/height**2
+print('BMI = ',bmi,sep=' ')
+
+
+
+練習04 時速秒速変換
+
+hspeed = float(input('時速(km/h)> '))
+sspeed = hspeed*1000.0/60**2
+print('秒速 = ',sspeed,'m/s',sep=' ')
+
+
+
+練習05 10進数2進数変換
+
+num = int(input('10進数> '))
+first = num
+# いろいろな方法あり。
+b128 = num // 2**7
+num = num % 2**7
+b064 = num // 2**6
+num = num % 2**6
+b032 = num // 2**5
+num = num % 2**5
+b016 = num // 2**4
+num = num % 2**4
+b008 = num // 2**3
+num = num % 2**3
+b004 = num // 2**2
+num = num % 2**2
+b002 = num // 2
+num = num % 2
+binary = str(b128)+str(b064)+str(b032)+str(b016)+str(b008)+str(b004)+str(b002)+str(num)
+print(first,'=',binary,sep=' ')
+
+
+
+練習06 金種計算
+
+money = int(input('金額(円)> '))
+print('金額:',money,'円',sep=' ')
+maisuu = money // 10000
+money = money % 10000
+print('一万円札=',maisuu,'枚',sep=' ')
+maisuu = money // 5000
+money = money % 5000
+print('五千円札=',maisuu,'枚',sep=' ')
+maisuu = money // 1000
+money = money % 1000
+print('千円札　=',maisuu,'枚',sep=' ')
+maisuu = money // 500
+money = money % 500
+print('五百円玉=',maisuu,'枚',sep=' ')
+maisuu = money // 100
+money = money % 100
+print('百円玉　=',maisuu,'枚',sep=' ')
+maisuu = money // 50
+money = money % 50
+print('五十円玉=',maisuu,'枚',sep=' ')
+maisuu = money // 10
+money = money % 10
+print('十円玉　=',maisuu,'枚',sep=' ')
+maisuu = money // 5
+money = money % 5
+print('五円玉　=',maisuu,'枚',sep=' ')
+print('一円玉　=',money,'枚',sep=' ')
+
+
+
+練習07 BMIチェック改良版
+
+height = float(input('身長をm単位で入力して下さい> '))
+weight = float(input('体重をkg単位で入力して下さい> '))
+bmi = weight/height**2
+print('BMI = ',bmi,sep=' ')
+if bmi < 18.5 :
+    print('あなたは「'+'痩せすぎ'+'」です。')
+elif bmi >= 18.5 and bmi < 25.0 :
+    print('あなたは「'+'標準'+'」です。')
+elif bmi >= 25.0 and bmi < 30.0 :
+    print('あなたは「'+'肥満'+'」です。')
+else :
+    print('あなたは「'+'高度肥満'+'」です。')
+
+
+
+練習08 整数曜日変換
+
+weeknumber = int(input('数(0-6)> '))
+if weeknumber == 0 :
+    print('日曜日')
+elif weeknumber == 1 :
+    print('月曜日')
+elif weeknumber == 2 :
+    print('火曜日')
+elif weeknumber == 3 :
+    print('水曜日')
+elif weeknumber == 4 :
+    print('木曜日')
+elif weeknumber == 5 :
+    print('金曜日')
+elif weeknumber == 6 :
+    print('土曜日')
+else :
+    print('0〜6までの整数を入力して下さい。')
+
+
+
+練習09 うるう年の判定
+
+year = int(input('西暦で年を入力して下さい> '))
+leap = False # 最初にうるう年ではないと指定。
+if year % 400 == 0 :
+    leap = True
+elif year % 100 == 0 :
+    leap = False
+elif leap % 4 == 0 :
+    leap = True
+if leap :
+    print(str(year)+'年はうるう年です。')
+else :
+    print(str(year)+'年はうるう年ではありません。')
+
+
+
+練習10 あなたの誕生日は何曜日？
+
+year = int(input('年> '))
+month = int(input('月> '))
+day = int(input('日> '))
+datestr = str(year)+'年'+str(month)+'月'+str(day)+'日'
+if month == 1 or month == 2 :
+    year = year - 1
+    month = month + 12
+weekday = (year + (year // 4) - (year // 100) + \
+  (year // 400) + ((13*month+8) // 5) + day) % 7
+if weekday == 0 :
+    weekstr = '日曜日'
+elif weekday == 1 :
+    weekstr = '月曜日'
+elif weekday == 2 :
+    weekstr = '火曜日'
+elif weekday == 3 :
+    weekstr = '水曜日'
+elif weekday == 4 :
+    weekstr = '木曜日'
+elif weekday == 5 :
+    weekstr = '金曜日'
+elif weekday == 6 :
+    weekstr = '土曜日'
+print(datestr+'は'+weekstr+'です。')
+
+
+
+練習11 ジャンケンするプログラム
+
+import random
+print('ジャンケンポン!')
+yours = int(input('あなたは？(0:グー, 1:チョキ, 2:パー)> '))
+comp = random.randint(0,2)
+if comp == 0 : # グー
+    compstr = 'わたしはグー。'
+    if yours == 0 :
+        yourstr = 'あなたもグー。'
+        result = 'あいこです。'
+    elif yours == 1 :
+        yourstr = 'あなたはチョキ。'
+        result = 'あなたの負けです。'
+    else :
+        yourstr = 'あなたはパー。'
+        result = 'あなたの勝ちです。'
+elif comp == 1 : # チョキ
+    compstr = 'わたしはチョキ。'
+    if yours == 0 :
+        yourstr = 'あなたはグー。'
+        result = 'あなたの勝ちです。'
+    elif yours == 1 :
+        yourstr = 'あなたもチョキ。'
+        result = 'あいこです。'
+    else :
+        yourstr = 'あなたはパー。'
+        result = 'あなたの負けです。'
+else : # パー
+    compstr = 'わたしはパー。'
+    if yours == 0 :
+        yourstr = 'あなたはグー。'
+        result = 'あなたの負けです。'
+    elif yours == 1 :
+        yourstr = 'あなたはチョキ。'
+        result = 'あなたの勝ちです。'
+    else :
+        yourstr = 'あなたもパー。'
+        result = 'あいこです。'
+print(compstr+yourstr+result)
+
+
+
+練習12 数の比較
+
+a = int(input('数1> '))
+b = int(input('数2> '))
+c = int(input('数3> '))
+# 戦略。aを一番小さくし、次にbを決める。
+if a > b :
+    temp = a
+    a = b
+    b = temp
+if a > c :
+    temp = a
+    a = c
+    c = temp
+#
+# a が最小。
+#
+if b > c :
+    temp = b
+    b = c
+    c = temp
+print(a,b,c,sep=' ')     
+
+
+
+練習13 階乗計算
+
+n = int(input('数> '))
+fac = 1
+for i in range(1,n+1) :
+    fac *= i
+print(str(n)+'! =',fac,sep=' ')
+
+
+
+練習14 棒グラフ
+
+n = int(input('数> '))
+print(str(n)+':',end='') # 改行しない出力
+for i in range(0,n) :
+    print('■',end='')
+print() # 改行だけ出力
+# Python3による別解
+print(str(n)+':'+('■'*n))
+
+
+
+練習15 棒グラフ
+
+n = int(input('数> '))
+for j in range(1,n+1) :
+    print(str(j)+':',end='') # 改行しない出力
+    for i in range(0,j) :
+        print('■',end='')
+    print() # 改行だけ出力
+
+
+
+練習16 データ数のわからない集計
+
+counter = 0
+gokei = 0
+data = int(input('データ入力(負の数で終了)> '))
+while data >= 0 :
+    counter += 1
+    gokei += data
+    data = int(input('データ入力(負の数で終了)> '))
+heikin = gokei/counter
+print('データ数:',counter,'合計:',gokei,'平均:',heikin)
+
+
+
+練習17 借金を返済しよう
+
+shakkin = int(input('借金> '))
+riritsu = float(input('年利率(%)> '))
+hensai =  int(input('返済額> '))
+total = 0
+month = 0
+while shakkin > hensai :
+    month += 1
+    shakkin = shakkin*(1 + riritsu/12/100) - hensai
+    print(str(month)+'月: 返済額',hensai,'円','残り',\
+    int(shakkin),sep=' ')
+    total += hensai
+month += 1
+shakkin = shakkin*(1 + riritsu/12/100)
+total += shakkin
+print(str(month)+'月: 返済額',int(shakkin),'円','これで完済。','返済総額: ',\
+int(total),'円',sep=' ')

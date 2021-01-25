@@ -1,0 +1,8 @@
+USBカメラで監視カメラ
+https://qiita.com/FukuharaYohei/items/ec6dce7cc5ea21a51a82
+
+（ラズパイで）USBカメラの映像をPythonのOpenCVで高速に表示する
+https://qiita.com/kakinaguru_zo/items/eda129635816ad871e9d
+
+USBカメラで監視カメラ
+http://make.bcde.jp/raspberry-pi/usb%E3%82%AB%E3%83%A1%E3%83%A9%E3%81%A7%E7%9B%A3%E8%A6%96%E3%82%AB%E3%83%A1%E3%83%A9/
